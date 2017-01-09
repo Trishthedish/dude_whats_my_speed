@@ -34,3 +34,25 @@ group :test do
   gem 'guard',                    '2.13.0'
   gem 'guard-minitest',           '2.4.4'
 end
+---------------------------------------------
+<!-- <section>
+  <h1>What's your speed?</h1>
+  <div class="container" width="940px">
+    <div class="row-fluid">
+      <div class="span6 divide">
+        <div class="container">
+          <form action="">
+            <div class="row">
+              <div>
+                <label>Lattitude</label><input class="span3" placeholder=" Lattitude" type="text">
+                <label>Longitude</label><input class="span3" placeholder="Longitude" type="text">
+                <div><button class="btn btn-primary">search</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
