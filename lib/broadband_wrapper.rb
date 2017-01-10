@@ -4,6 +4,10 @@ require 'awesome_print'
 
 # &maxresults={maxResults}
 class Broadband_Wrapper
+
+  # def initialize()
+  #   speed_inf
+  # end
   BASE_URL = "https://www.broadbandmap.gov/broadbandmap/"
   DATA_VERSION = "jun2014"
   FORMAT = "json"
@@ -15,22 +19,29 @@ class Broadband_Wrapper
 
     data = HTTParty.get(url)
     search_results = []
-    data["Results"].each do |result|
-      resource = result["wirelessServices"]
-      search_results << build_data(resource)
+    data = data["Results"]
+
+    data["wirelessServices"].each do |service|
+
+      @name = service["providerName"]
+      @company = service["doingBusinessAs"]
+      @speed_info = service["technologies"]
+      search_results << build_data(@speed_info[0])
     end
     search_results
+
   end
 
-  def self.build_data(resource)
-    name = resource["providerName"]
-    company = resource["doingBusinessAs"]
-    max_ad_download = resource["technologies"]["maximumAdvertisedDownloadSpeed"]
+  def self.build_data(speed_info)
 
-    max_ad_upload = resource["technologies"]["maximumAdvertisedUploadSpeed"]
-    maximumDownload = resource["technologies"]["maximumDownloadScore"]
-    maximumUpload = resource["technologies"]["maximumUploadScore"]
-    Resource.new(name, company, max_ad_download, max_ad_upload, maximumDownload, maximumUpload)
+      @max_ad_download = speed_info["maximumAdvertisedDownloadSpeed"]
+      @max_ad_upload = speed_info["maximumAdvertisedUploadSpeed"]
+      @maximumDownload = speed_info["maximumDownloadScore"]
+      @maximumUpload = speed_info["maximumUploadScore"]
+      # 
+      # Resource.new(@name, @company, @max_ad_download, @max_ad_upload, @maximumDownload, @maximumUpload)
+
+
   end
 
 
