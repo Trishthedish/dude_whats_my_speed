@@ -15,22 +15,38 @@ class Broadband_Wrapper
 
     data = HTTParty.get(url)
     search_results = []
-    data["Results"].each do |result|
-      resource = result["wirelessServices"]
-      search_results << build_data(resource)
+    services = data["Results"]["wirelessServices"]
+    services.each do |service|
+      search_results << build_data(service)
     end
     search_results
   end
 
-  def self.build_data(resource)
-    name = resource["providerName"]
-    company = resource["doingBusinessAs"]
-    max_ad_download = resource["technologies"]["maximumAdvertisedDownloadSpeed"]
+  # def self.build_tech(service)
+  #   tech = service["technologies"]
+  #   tech.each do |info|
+  #     max_ad_download = info["maximumAdvertisedDownloadSpeed"]
+  #     max_ad_upload = info["maximumAdvertisedUploadSpeed"]
+  #     maximumDownload = info["maximumDownloadScore"]
+  #     maximumUpload = info["maximumUploadScore"]
+  #
+  #     tech_results << build_data(service)
+  #   end
+  #   tech_results
+  # end
 
-    max_ad_upload = resource["technologies"]["maximumAdvertisedUploadSpeed"]
-    maximumDownload = resource["technologies"]["maximumDownloadScore"]
-    maximumUpload = resource["technologies"]["maximumUploadScore"]
-    Resource.new(name, company, max_ad_download, max_ad_upload, maximumDownload, maximumUpload)
+
+
+
+  def self.build_data(service)
+    name = service["providerName"]
+    company = service["doingBusinessAs"]
+    max_ad_download = service["maximumAdvertisedDownloadSpeed"]
+
+    # max_ad_upload = ["technologies"]["maximumAdvertisedUploadSpeed"]
+    # maximumDownload = ["technologies"]["maximumDownloadScore"]
+    # maximumUpload = ["technologies"]["maximumUploadScore"]
+    Service.new(name, company, max_ad_download, max_ad_upload, maximumDownload, maximumUpload)
   end
 
 
