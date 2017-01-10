@@ -1,5 +1,7 @@
 require 'httparty'
 require 'awesome_print'
+
+# require 'service'
 # {API Base}/broadband/{dataVersion}/wireless?latitude={latitude}&longitude=-{longitude}&format={format}
 
 # &maxresults={maxResults}
@@ -41,7 +43,7 @@ class Broadband_Wrapper
       #
       # Resource.new(@name, @company, @max_ad_download, @max_ad_upload, @max_download, @max_upload)
 
-
+      Service.new(@name, @company, @max_ad_download, @max_ad_upload, @max_download, @max_upload)
   end
 
 

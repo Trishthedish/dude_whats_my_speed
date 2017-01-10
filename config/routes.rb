@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   # get 'broadband/show/'
 
+  # get "service#index"
+
 
 end
