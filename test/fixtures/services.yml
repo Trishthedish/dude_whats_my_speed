@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  company: MyString
+  max_ad_download: 9.99
+  max_ad_upload: 9.99
+  max_download: 9.99
+  max_upload: 9.99
+
+two:
+  name: MyString
+  company: MyString
+  max_ad_download: 9.99
+  max_ad_upload: 9.99
+  max_download: 9.99
+  max_upload: 9.99
