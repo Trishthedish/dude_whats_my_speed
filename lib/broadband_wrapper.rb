@@ -5,15 +5,16 @@ require 'awesome_print'
 # &maxresults={maxResults}
 class Broadband_Wrapper
   BASE_URL = "https://www.broadbandmap.gov/broadbandmap/"
-  DATA_VERSION = "jun2014?"
+  DATA_VERSION = "jun2014"
   FORMAT = "json"
+  LAT_SEARCH = "34.04"
+  LONG_SEARCH = "-111.09"
 
-  def self.search_broadband(lat_search, long_search)
-    url = BASE_URL + "broadband" + "#{DATA_VERSION}" + "wireless?" + "latitude=#{lat_search}" + "&longitude=-#{long_search}" + "&format=#{FORMAT}"
+  def self.search_broadband()
+    url = BASE_URL + "broadband/" + "#{DATA_VERSION}" + "/wireless?" + "latitude=#{LAT_SEARCH}" + "&longitude=#{LONG_SEARCH}" + "&format=#{FORMAT}"
 
     data = HTTParty.get(url)
     search_results = []
-
     data["Results"].each do |result|
       resource = result["wirelessServices"]
       search_results << build_data(resource)

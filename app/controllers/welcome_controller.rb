@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
 
 def index
-  @search_results = Broadband_Wrapper.search_results(@lat_search, @long_search)
+  @search_results = Broadband_Wrapper.search_broadband()
+
 end
 
 end
