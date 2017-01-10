@@ -4,11 +4,13 @@
 <h1 class="jumbotron">Hello World First page</h1>
 
 
-  <h3 class="headline">Find SOMETHING...</h3>
-  <%= form_tag(search_broadband_path(), :method => "get") do %>
-    <%= search_field_tag("query", nil, :placeholder=>"lat_search") %>
-  <%= form_tag(search_broadband_path(), :method => "get") do %>
-    <%= search_field_tag("query", nil, :placeholder=>"long_search") %>
-    <%= submit_tag "Submit", :name => nil, class: "button" %>
-    <% end %>
-    <% end %>
+  <h3>Find SOMETHING...</h3>
+
+
+  <%# <!-- <%= form_tag(search_broadband_path(), :method => "get") do %>
+    <%# search_field_tag("query", nil, :placeholder=>"lat_search") %>
+  <%# form_tag(search_broadband_path(), :method => "get") do %>
+    <%# search_field_tag("query", nil, :placeholder=>"long_search") %>
+    <%# submit_tag "Submit", :name => nil, class: "button" %>
+    <%# end %>
+    <%#end %>
