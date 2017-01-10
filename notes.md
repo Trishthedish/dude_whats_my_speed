@@ -56,3 +56,67 @@ end
     </div>
   </div>
 </section> -->
+
+
+---------------------------------------------
+
+
+require 'httparty'
+require 'awesome_print'
+# {API Base}/broadband/{dataVersion}/wireless?latitude={latitude}&longitude=-{longitude}&format={format}
+
+# &maxresults={maxResults}
+class Broadband_Wrapper
+  BASE_URL = "https://www.broadbandmap.gov/broadbandmap/"
+  DATA_VERSION = "jun2014"
+  FORMAT = "json"
+  LAT_SEARCH = "34.04"
+  LONG_SEARCH = "-111.09"
+
+  def self.search_broadband()
+    url = BASE_URL + "broadband/" + "#{DATA_VERSION}" + "/wireless?" + "latitude=#{LAT_SEARCH}" + "&longitude=#{LONG_SEARCH}" + "&format=#{FORMAT}"
+
+    data = HTTParty.get(url)
+    search_results = []
+    services = data["Results"]["wirelessServices"]
+    services.each do |service|
+      search_results << build_data(service)
+    end
+    search_results
+  end
+
+  def self.build_tech(service)
+    name = service["providerName"]
+    company = service["doingBusinessAs"]
+    technologies = service["technologies"]
+
+    technologies.each do |line|
+      max_ad_download = line["maximumAdvertisedDownloadSpeed"]
+      max_ad_upload = line["maximumAdvertisedUploadSpeed"]
+      maximumDownload = line["maximumDownloadScore"]
+      maximumUpload = line["maximumUploadScore"]
+    end
+    search_results << build_data(service)
+  end
+
+  def self.get_service
+    url = BASE_URL + "broadband/" + "#{DATA_VERSION}" + "/wireless?" + "latitude=#{LAT_SEARCH}" + "&longitude=#{LONG_SEARCH}" + "&format=#{FORMAT}"
+    service = HTTParty.get(url).parsed_response.first
+    build_data(service)
+  end
+
+  private
+  def self.build_data(service)
+    name = service["providerName"]
+    company = service["doingBusinessAs"]
+    technologies = service["technologies"]
+    technologies.each do |line|
+      max_ad_download = line["maximumAdvertisedDownloadSpeed"]
+      max_ad_upload = line["maximumAdvertisedUploadSpeed"]
+      maximumDownload = line["maximumDownloadScore"]
+      maximumUpload = line["maximumUploadScore"]
+    end
+
+    Service.new(name, company, technologies, max_ad_download, max_ad_upload, maximumDownload, maximumUpload)
+
+  end
