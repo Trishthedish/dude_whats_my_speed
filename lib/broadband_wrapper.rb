@@ -36,10 +36,10 @@ class Broadband_Wrapper
 
       @max_ad_download = speed_info["maximumAdvertisedDownloadSpeed"]
       @max_ad_upload = speed_info["maximumAdvertisedUploadSpeed"]
-      @maximumDownload = speed_info["maximumDownloadScore"]
-      @maximumUpload = speed_info["maximumUploadScore"]
-      # 
-      # Resource.new(@name, @company, @max_ad_download, @max_ad_upload, @maximumDownload, @maximumUpload)
+      @max_download = speed_info["maximumDownloadScore"]
+      @max_upload = speed_info["maximumUploadScore"]
+      #
+      # Resource.new(@name, @company, @max_ad_download, @max_ad_upload, @max_download, @max_upload)
 
 
   end
