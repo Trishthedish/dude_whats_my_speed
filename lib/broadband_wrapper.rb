@@ -21,9 +21,9 @@ class Broadband_Wrapper
 
     data = HTTParty.get(url)
     search_results = []
-    data = data["Results"]
+    results_data = data["Results"]
 
-    data["wirelessServices"].each do |service|
+    results_data["wirelessServices"].each do |service|
 
       @name = service["providerName"]
       @company = service["doingBusinessAs"]
