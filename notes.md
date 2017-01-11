@@ -99,4 +99,15 @@ class Broadband_Wrapper
 end
 
 
+------------------------------------------------
+Great definitions for tricky concepts seen here. Will be helpful when attempting to describe the data.
+
+https://www.broadbandmap.gov/classroom/download-upload#advertised-download-speed
+
+Maximum Advertised Download Speed
+
+On the National Broadband Map, this is the maximum download speed that a broadband provider advertises in an area. This usually represents the maximum download speed that the network can provide. Actual performance depends on a number of factors that may include your computer, network congestion due to other users, and the location of your home or business, among others.
+
+
+
 https://www.broadbandmap.gov/broadbandmap/geography/tribalnation?format=json&all=true
