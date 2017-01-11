@@ -113,4 +113,10 @@ On the National Broadband Map, this is the maximum download speed that a broadba
 https://www.broadbandmap.gov/broadbandmap/geography/tribalnation?format=json&all=true
 
 
-https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-quartile-speeds-by-geography-type next api call 
+https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-quartile-speeds-by-geography-type next api call
+
+
+
+
+-----------------------------------------------
+<!-- <%#form_tag locations_path, :method => :get do %> -->
