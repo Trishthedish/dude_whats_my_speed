@@ -6,6 +6,11 @@
 
   <h3>Find SOMETHING...</h3>
 
+  <!-- root_path I pass it recipes_path, the action I want it to go to along with :method => 'get' -->
+
+  <% if @locations.blank? %>
+    <h4>There are no locations containing the term <%= params[:search] %>.</h4>
+  <% end %>
 
 
 <%= form_tag root_path, :method => :get do  %>
