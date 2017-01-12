@@ -7,5 +7,8 @@ Rails.application.routes.draw do
 
   # get "service#index"
 
+  # locations search?
+  resources :locations 
+
 
 end
