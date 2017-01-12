@@ -1,12 +1,15 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.order
+    @search_results = Broadband_Wrapper.search_broadband
+    @locations = Location.order('created_at DESC')
+    render "welcome/index"
+
   end
 
 
   def new
-    @location = Location.new
+    @location = Location.new(location_params)
   end
 
   def create
@@ -22,7 +25,7 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:address)
+    params.require(:location).permit(:address, :latitude, :longitude)
   end
 
 end
