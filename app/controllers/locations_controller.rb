@@ -9,15 +9,18 @@ class LocationsController < ApplicationController
 
 
   def new
-    @location = Location.new(location_params)
+    @location = Location.new
   end
 
   def create
     @location = Location.new(location_params)
     if @location.save
+
+      logger.debug "Location: #{@location.attributes.inspect}"
       flash[:success] = "Location added!"
       redirect_to root_path
     else
+      logger.debug "didnt create location"
       render 'new'
     end
   end
