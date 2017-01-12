@@ -8,15 +8,11 @@
 
   <!-- root_path I pass it recipes_path, the action I want it to go to along with :method => 'get' -->
 
-  <% if @locations.blank? %>
-    <h4>There are no locations containing the term <%= params[:search] %>.</h4>
-  <% end %>
 
-
-<%= form_tag root_path, :method => :get do  %>
+<%= form_tag search_locations_path, :method => :get do  %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
+    <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
 

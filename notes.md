@@ -115,8 +115,10 @@ https://www.broadbandmap.gov/broadbandmap/geography/tribalnation?format=json&all
 
 https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-quartile-speeds-by-geography-type next api call
 
-
-
-
 -----------------------------------------------
+
+<#!#--
+  <%# if @locations.blank? %>
+    <h4>There are no locations containing the term <%= params[:search] %>.</h4>
+  <%# end %> -->
 <!-- <%#form_tag locations_path, :method => :get do %> -->
