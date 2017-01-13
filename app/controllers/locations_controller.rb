@@ -2,18 +2,33 @@ class LocationsController < ApplicationController
 
   def index
     @search_results = Broadband_Wrapper.search_broadband
-    @locations = Location.order('created_at DESC')
-    render "welcome/index"
 
+    # @locations = Location.all
+
+
+    if params[:search].present?
+      @locations = Location.near(params[:search], 50, :order => :distance)
+      render "welcome/index"
+
+    else
+      @locations = Location.all
+      render "welcome/index"
+    end
   end
-
 
   def new
     @location = Location.new
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = Location.new(params[:search])
+
+    @longitude = Geocoder.coordinates(params[:search])[0]
+    @latitude = Geocoder.coordinates(params[:search])[1]
+
+
+    @params = location_params
+    @params = params
     if @location.save
 
       logger.debug "Location: #{@location.attributes.inspect}"
@@ -28,7 +43,7 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:address, :latitude, :longitude)
+    params.require(:search)
   end
 
 end
