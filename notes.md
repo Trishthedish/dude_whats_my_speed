@@ -113,4 +113,16 @@ On the National Broadband Map, this is the maximum download speed that a broadba
 https://www.broadbandmap.gov/broadbandmap/geography/tribalnation?format=json&all=true
 
 
-https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-quartile-speeds-by-geography-type next api call 
+https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-quartile-speeds-by-geography-type next api call
+
+------------------------------
+<% @search_results.each do |item|  %>
+  <ul>
+    <li><strong>Name: </strong><%=item.name  %> </li>
+    <li> Company: <%=item.company %> </li>
+    <li> Max Advertised Download Speed: <%=item.max_ad_download %> </li>
+    <li>Max Advertised Upload Speed: <%=item.max_ad_upload %></li>
+    <li> Max Download Speed: <%=item.max_download %></li>
+    <li> Max Upload Speed: <%=item.max_upload %></li>
+  </ul>
+<% end %>
