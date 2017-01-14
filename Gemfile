@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
+#Stormpath is currently in beta so it is necessary to include the gem version:
+gem 'stormpath-rails', '~> 2.5.0'
+
 gem 'geocoder'
 gem 'httparty'
 gem 'jquery-turbolinks'

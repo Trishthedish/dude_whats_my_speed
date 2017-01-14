@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # locations search?
   resources :locations
 
+  stormpath_rails_routes
 
 end
 
