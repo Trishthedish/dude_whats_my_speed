@@ -1,0 +1,12 @@
+<h1>LOCATION HOME</h1>
+
+<% @search_results.each do |item|  %>
+  <ul>
+    <li><strong>Name: </strong><%=item.name  %> </li>
+    <li> Company: <%=item.company %> </li>
+    <li> Max Advertised Download Speed: <%=item.max_ad_download %> </li>
+    <li>Max Advertised Upload Speed: <%=item.max_ad_upload %></li>
+    <li> Max Download Speed: <%=item.max_download %></li>
+    <li> Max Upload Speed: <%=item.max_upload %></li>
+  </ul>
+<% end %>

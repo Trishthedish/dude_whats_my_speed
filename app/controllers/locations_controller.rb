@@ -1,18 +1,15 @@
 class LocationsController < ApplicationController
 
   def index
-    @search_results = Broadband_Wrapper.search_broadband
-
-    # @locations = Location.all
-
-
+    @latitude = Geocoder.coordinates(params[:search])[0]
+    @longitude = Geocoder.coordinates(params[:search])[1]
+    @search_results = Broadband_Wrapper.search_broadband(@latitude,@longitude)
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => :distance)
-      render "welcome/index"
-
+      render "locations/index"
     else
       @locations = Location.all
-      render "welcome/index"
+      render "locations/index"
     end
   end
 
@@ -21,24 +18,19 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(params[:search])
+    @location = Location.new
+    @location.address = params[:search]
+    @location.latitude = Geocoder.coordinates(params[:search])[0]
+    @location.longitude = Geocoder.coordinates(params[:search])[1]
 
-    @longitude = Geocoder.coordinates(params[:search])[0]
-    @latitude = Geocoder.coordinates(params[:search])[1]
-
-
-    @params = location_params
-    @params = params
     if @location.save
-
-      logger.debug "Location: #{@location.attributes.inspect}"
-      flash[:success] = "Location added!"
-      redirect_to root_path
     else
       logger.debug "didnt create location"
       render 'new'
     end
   end
+#adddress #lat longitude
+
 
 
   private
