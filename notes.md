@@ -126,3 +126,11 @@ https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-qu
     <li> Max Upload Speed: <%=item.max_upload %></li>
   </ul>
 <% end %>
+
+
+<li><a href="login" class="login">Login</a></li>
+  <% if signed_in? %>
+    <li>Logged in as_: <%= current_account.given_name %></li>
+                      <li> status<%= current_account.status %></li>
+    <li> <%= link_to "Log out", logout_path, method: :post %></li>
+  <% end %>

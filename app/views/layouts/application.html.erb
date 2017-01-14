@@ -22,7 +22,15 @@
           <li><a href="#"></a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="login">Login</a></li>
+          <% if signed_in? %>
+           <li class="login">WELCOME:  <%= current_account.given_name %></li>
+          <li> <%= link_to "Log out", logout_path, method: :post %></li>
+
+        <% else %>
+              <li><a href="login" class="login">Login</a></li>
+
+          <% end %>
+
         </ul>
       </div>
     </div>
