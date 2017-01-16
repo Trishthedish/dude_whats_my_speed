@@ -1,5 +1,41 @@
+// .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+// color: green;  /*Sets the text hover color on navbar*/
+// }
+// body {
+//   background-image: image-url('openroad.jpg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+//
+// this config allowed picture to be stretched over page.
+body {
+  background-color: #fff;
+  color:white;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background: image-url('openroad.jpg');
+}
+
 
 .login {
   color: red;
   background-color: yellow;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+
+.glyphicon {
+  font-size: 5em;
+  display: block;
+  text-align: center;
+  color: #3a878D;
+}
+
+.holder {
+  background-color: white;
+  border-radius: 10%;
 }
