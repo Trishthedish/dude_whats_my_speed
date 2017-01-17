@@ -1,0 +1,2 @@
+class RasberryPiController < ApplicationController
+end
