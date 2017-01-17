@@ -3,11 +3,17 @@ Rails.application.routes.draw do
 
   resources :services
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get  'welcome/about' => 'welcome#about'
 
-  get 'welcome/contact' => 'welcome#contact'
+  #
+  # get 'broadband/show/' => "#"
+  get 'rasberry_pis/index' => 'rasberry_pi#index'
+  post 'rasberry_pis/index' => 'rasberry_pi#create'
 
-  # get 'broadband/show/'
+# https://robots.thoughtbot.com/back-to-basics-http-requests
+  # match '/curl_example' => 'request_example#curl_post_example', via: :post
+
+
+
 
   # get "service#index"
 
