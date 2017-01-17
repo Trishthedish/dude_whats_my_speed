@@ -1,0 +1,2 @@
+class RasberryPi < ApplicationRecord
+end
