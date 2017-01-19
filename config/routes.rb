@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 # https://robots.thoughtbot.com/back-to-basics-http-requests
   # match '/curl_example' => 'request_example#curl_post_example', via: :post
 
-
+  get 'users/index' => 'users#index'
 
 
   # get "service#index"
