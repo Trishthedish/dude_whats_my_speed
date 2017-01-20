@@ -14,6 +14,11 @@ class RasberryPiController < ApplicationController
     # params.keys.each do |key|
     #   logger.debug "#{key}  =  #{params[key]}"
     # end
+    p "----------------------"
+    p "params: #{params}"
+    p "params.pi_data: #{params['pi_data']}"
+    p "params.pi_data.ping: #{params['pi_data']['ping']}"
+    p "----------------------"
     @pi_data = RasberryPi.new
     @pi_data.ping = params["pi_data"]["ping"]
     @pi_data.download = params["pi_data"]["download"]
