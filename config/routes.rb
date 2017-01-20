@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get 'users/index' => 'users#index'
 
+  get 'welcome/about' => 'welcome#about'
 
+  get 'welcome/contact' => 'welcome#contact'
   # get "service#index"
 
   # locations search?
