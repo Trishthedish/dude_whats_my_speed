@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+//= require highcharts
+// to get the new features in 2.3.0:
+//= require highcharts/highcharts-more
+//= require highcharts/modules/annotations
+//= require highcharts/modules/canvas-tools
+//= require highcharts/modules/data
+//= require highcharts/modules/drilldown
+//= require highcharts/adapters/standalone-framework
+//= require highcharts/modules/no-data-to-display
+//= require highcharts/modules/offline-exporting
