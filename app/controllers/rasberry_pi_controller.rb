@@ -1,32 +1,35 @@
 class RasberryPiController < ApplicationController
   def index
-    pi_data = Pi_data.all
+    @pi_data = RasberryPi.all
     # render json: {status: 'SUCCESS', message: 'Loaded all posts', data: rasberry_pi}, status: :ok
 
   end
 
   def create
-    puts params.keys
-    logger.debug "Params keys #{params.keys}"
-    logger.debug "Params sub pi_data sub ping #{params['pi_data']['ping']}"
-    logger.debug "Params = #{params}"
-
-    params.keys.each do |key|
-      logger.debug "#{key}  =  #{params[key]}"
-    end
-
-
-
+    # puts params.keys
+    # logger.debug "Params keys #{params.keys}"
+    # logger.debug "Params sub pi_data sub ping #{params['pi_data']['ping']}"
+    # logger.debug "Params = #{params}"
+    #
+    # params.keys.each do |key|
+    #   logger.debug "#{key}  =  #{params[key]}"
+    # end
     @pi_data = RasberryPi.new
     @pi_data.ping = params["pi_data"]["ping"]
     @pi_data.download = params["pi_data"]["download"]
     @pi_data.download = params["pi_data"]["upload"]
     if @pi_data.save
+      respond_with(@pi_data)
     else
       logger.debug "didnt create pi_data"
       render 'new'
     end
   end
+
+#   NoMethodError (undefined method `respond_with' for #<RasberryPiController:0x007fde8a2891a8>
+# Did you mean?  respond_to):
+#
+
 
   def curl_post_example
       render text: "Thanks for sending a POST request with cURL! Payload: #{request.body.read}"
@@ -40,6 +43,7 @@ end
 
 
 
+#curl -X POST -d "pi_data[ping]=20.00" -d "pi_data[download]=20.00" -d "pi_data[upload]=20.00"  http://localhost:3000/rasberry_pis/index
 
 # curl -X POST -H "Content-Type: application/json" -d "${json}" https://maker.ifttt.com/trigger/speedtest/with/key/cJ-suGaqKnru9izr3qfo3A
 #
