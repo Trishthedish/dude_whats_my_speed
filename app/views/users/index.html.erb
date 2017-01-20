@@ -11,4 +11,25 @@
 
 <% end %>
 
+
+
+<table class="pretty">
+<tr>
+  <th>Ping</th>
+  <th>Download</th>
+  <th>Upload</th>
+</tr>
+<% for pi_data on @pi_data %>
+  <tr>
+    <td><%=item.ping %></td>
+    <td><%=item.download %></td>
+    <td><%=item.upload %></td>
+  </tr>
+  <% end %>
+
+</table>
+
+
+
+
 <h2><%= @pi_data.count %></h2>
