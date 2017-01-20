@@ -77,6 +77,8 @@ GEM
     geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    highcharts-rails (4.2.5)
+      railties (>= 3.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.14.0)
@@ -228,6 +230,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   geocoder
+  highcharts-rails
   httparty
   jbuilder (~> 2.5)
   jquery-rails
