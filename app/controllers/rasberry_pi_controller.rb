@@ -7,8 +7,8 @@ class RasberryPiController < ApplicationController
 
   def create
     # puts params.keys
-    # logger.debug "Params keys #{params.keys}"
-    # logger.debug "Params sub pi_data sub ping #{params['pi_data']['ping']}"
+    logger.debug "Params keys #{params.keys}.awesome_inspect"
+    logger.debug "Params sub pi_data sub ping #{params['pi_data']['ping']}"
     # logger.debug "Params = #{params}"
     #
     # params.keys.each do |key|
@@ -19,10 +19,11 @@ class RasberryPiController < ApplicationController
     @pi_data.download = params["pi_data"]["download"]
     @pi_data.download = params["pi_data"]["upload"]
     if @pi_data.save
-      respond_with(@pi_data)
+      logger.debug "pi_data created bitch!"
+      render json: {status: 'SUCCESS', message: 'Loaded all pi_data'}, status: :ok
     else
       logger.debug "didnt create pi_data"
-      render 'new'
+      render json: {status: 'SUCCESS', message: 'Loaded all pi_data'}, status: :ok
     end
   end
 
