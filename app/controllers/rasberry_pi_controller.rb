@@ -15,14 +15,14 @@ class RasberryPiController < ApplicationController
     #   logger.debug "#{key}  =  #{params[key]}"
     # end
     p "----------------------"
-    p "params: #{params}"
-    p "params.pi_data: #{params['pi_data']}"
-    p "params.pi_data.ping: #{params['pi_data']['ping']}"
+    p "params: #{params[0]}"
+    p "params.pi_data: #{params[:pi_data]}"
+    p "params.pi_data.ping: #{params[:pi_data]['ping']}"
     p "----------------------"
     @pi_data = RasberryPi.new
-    @pi_data.ping = params["pi_data"]["ping"]
-    @pi_data.download = params["pi_data"]["download"]
-    @pi_data.upload = params["pi_data"]["upload"]
+    @pi_data.ping = params[:pi_data]["ping"]
+    @pi_data.download = params[:pi_data]["download"]
+    @pi_data.upload = params[:pi_data]["upload"]
     if @pi_data.save
       logger.debug "pi_data created bitch!"
       render json: {status: 'SUCCESS', message: 'Loaded all pi_data'}, status: :ok
