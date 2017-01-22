@@ -134,3 +134,34 @@ https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-qu
                       <li> status<%= current_account.status %></li>
     <li> <%= link_to "Log out", logout_path, method: :post %></li>
   <% end %>
+
+
+
+
+
+
+  <!-- <%# @pi_data.each do |item| %>
+  <ul>
+    <li> ping: <%=item.ping %></li>
+    <li> Download: <%=item.download %></li>
+    <li> Upload: <%=item.upload %></li>
+
+  </ul>
+
+  <% end %> -->
+
+
+
+  <%= line_chart @pi_data.map { |data|
+  {
+    ping: data.ping,
+    download: data.downloads
+    upload: data.uploads.feats.
+
+    group_by_hour_of_day(:created_at).count}
+} %>
+
+
+ping: data.ping,
+download: data.downloads
+upload: data.uploads.feats.

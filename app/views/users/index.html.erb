@@ -1,14 +1,28 @@
 <h1>HELLO USER</h1>
 
 
-<%= @pi_data.each do |item| %>
-<ul>
-  <li> ping: <%=item.ping %></li>
-  <li> Download: <%=item.download %></li>
-  <li> Upload: <%=item.upload %></li>
 
+
+<h2><%= @pi_data.count %></h2>
+
+<%= @pi_data.each do |data| %>
+<ul>
+  <li><%= data.created_at %></li>
+  <li><%= data.ping %></li>
+  <li><%= data.download %></li>
+  <li><%= data.upload %></li>
 </ul>
 
 <% end %>
 
-<h2><%= @pi_data.count %></h2>
+<%= line_chart [
+  {name: "Ping", data: @pi_data.map {|p| p.ping}},
+  {name: "Download", data: @pi_data.map {|d| d.download}},
+  {name: "Upload", data: @pi_data.map{|u| u.upload}}
+
+
+] %>
+<!--
+<%line_chart @pi_data.group_by_week(:created_at, time_zone: "Pacific Time (US & Canada)").count %> -->
+
+<%= area_chart .group_by_minute(:created_at).maximum(:load_time) %>

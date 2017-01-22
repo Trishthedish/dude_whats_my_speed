@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   # get "service#index"
 
   # locations search?
+
+  get 'services/show' => 'services#show'
   resources :locations
 
   stormpath_rails_routes
