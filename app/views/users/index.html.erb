@@ -1,6 +1,13 @@
 <h1>HELLO USER</h1>
 
 
-<%= @users.each do |user| %>
-<%=link_to(user.name, user_show_path(rasberry_pi.id)) %>
+<% @users.each do |user| %>
+  <h1>Name: <%= user.name %></h1>
+  <h3>Service Provider in Question: <%= user.service_provider %></h3>
+  <ul>
+    <li>Monthly Cost: <%= user.monthly_cost %></li>
+    <li> Paid Download Speed: <%= user.paid_download %></li>
+    <li> Paid Upload Speed: <%= user.paid_upload %></li>
+    <li> Area Code: <%= user.area_code %></li>
+  </ul>
 <% end %>
