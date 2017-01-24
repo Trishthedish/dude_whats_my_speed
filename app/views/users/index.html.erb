@@ -14,17 +14,10 @@
 <% end %>
 
 
-<div class="row">
-  <!-- Line Chart - Multiple Series -->
-  <div class="col-xs-6">
-    <h3> NAME OF GRAPH</h3>
-    <%= line_chart RasberryPi.group(:ping).count  %>
-    <hr>
 
-
-  </div>
-
+  <h1> COUNT: <%=@pi_data.count %></h1>
+  <%=@pi_data.to_a %>
 
 
 </div>
-  <%= area_chart @pi_data.group_by_minute(:created_at).average(:ping) %>
+  <%= area_chart @pi_data.group_by_day(:created_at).count %>
