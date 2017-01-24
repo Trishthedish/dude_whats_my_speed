@@ -23,6 +23,7 @@ class RasberryPiController < ApplicationController
     @pi_data.ping = params[:pi_data]["ping"]
     @pi_data.download = params[:pi_data]["download"]
     @pi_data.upload = params[:pi_data]["upload"]
+    # @pi_data.datetime = DateTime.now
     if @pi_data.save
       logger.debug "pi_data created bitch!"
       render json: {status: 'SUCCESS', message: 'Loaded all pi_data'}, status: :ok

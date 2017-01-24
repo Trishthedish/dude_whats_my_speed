@@ -27,4 +27,4 @@
 
 
 </div>
-  <%= area_chart @pi_data.group_by_minute(:created_at).count(:ping) %>
+  <%= area_chart @pi_data.group_by_minute(:created_at).average(:ping) %>
