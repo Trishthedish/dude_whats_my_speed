@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119200235) do
+ActiveRecord::Schema.define(version: 20170124013605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170119200235) do
   end
 
   create_table "rasberry_pis", force: :cascade do |t|
-    t.string   "date"
     t.decimal  "ping"
     t.decimal  "download"
     t.decimal  "upload"
