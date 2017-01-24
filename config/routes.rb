@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # get 'broadband/show/' => "#"
   get 'rasberry_pis/index' => 'rasberry_pi#index'
   post 'rasberry_pis/index' => 'rasberry_pi#create'
+  get 'rasberry_pis/show' => 'rasberry_pis#show'
 
 # https://robots.thoughtbot.com/back-to-basics-http-requests
   # match '/curl_example' => 'request_example#curl_post_example', via: :post

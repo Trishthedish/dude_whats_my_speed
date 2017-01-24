@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    # @pi_data = RasberryPi.all
+    @pi_data = RasberryPi.all
     # @ordered_data = @pi_data.order(:date)
     @users = User.all
 
