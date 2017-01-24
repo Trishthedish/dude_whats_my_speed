@@ -7,6 +7,12 @@ class UsersController < ApplicationController
 
   end
 
+  def new
+    @myuser = User.new
+    @user_method = :post
+    @user_path = users_path
+  end
+
   def create
     @myuser = User.new
     @myuser.name = params[:user][:name]
@@ -32,7 +38,12 @@ class UsersController < ApplicationController
   end
 
 def edit
-
+  @myuser = User.find(params[:id])
+  @user_method = :put
+  @user_path = users_update_path(@myuser.id)
+  if @myuser == nil
+    render :file => 'public/404.html', :status => :not_found
+  end
 end
 
 
