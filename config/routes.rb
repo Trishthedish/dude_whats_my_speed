@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get 'users/index' => 'users#index'
 
+# should I instead use this to reference it?
+  resources :users
+
   get 'welcome/about' => 'welcome#about'
 
   get 'welcome/contact' => 'welcome#contact'

@@ -165,3 +165,18 @@ https://www.broadbandmap.gov/developer/api/speed-test-api-minimum-and-maximum-qu
 ping: data.ping,
 download: data.downloads
 upload: data.uploads.feats.
+
+
+
+---------------------
+<h2><%= @all_pi_data.count %></h2>
+
+<%= @pi_data.each do |data| %>
+<ul>
+  <li><%= data.created_at %></li>
+  <li><%= data.ping %></li>
+  <li><%= data.download %></li>
+  <li><%= data.upload %></li>
+</ul>
+
+<% end %>
