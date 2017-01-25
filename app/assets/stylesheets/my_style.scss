@@ -41,3 +41,40 @@ body {
   width: 70px;
   line-height: 30px;
 }
+
+
+.user_form {
+  // position: relative;
+  width: 740px;
+  height: 400px;
+  margin: 0 auto;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 20px;
+  padding-left: 20px;
+  background-color: white;
+  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
+// user_form {
+//   border: 2em;
+//   border-color: black;
+//   background-color: white;
+//   padding: 11px;
+//   color: blue;
+//   border: 2px solid black;
+// }
+
+
+
+.chart_title {
+  background-color: yellow;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.user_info {
+  padding-top: 30px;
+}

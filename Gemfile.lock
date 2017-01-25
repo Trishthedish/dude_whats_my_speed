@@ -24,6 +24,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_median (0.1.4)
+      activerecord
     activejob (5.0.1)
       activesupport (= 5.0.1)
       globalid (>= 0.3.6)
@@ -51,6 +53,7 @@ GEM
       sass (~> 3.2)
     builder (3.2.2)
     byebug (9.0.6)
+    chartkick (1.2.5)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.1)
@@ -77,6 +80,8 @@ GEM
     geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (2.1.1)
+      activerecord (>= 3.0.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.14.0)
@@ -221,13 +226,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_median (~> 0.1.0)
   autoprefixer-rails
   awesome_print
   bootstrap-sass (~> 3.2.0)
   byebug
+  chartkick (~> 1.2.4)
   coffee-rails (~> 4.2)
   dotenv-rails
   geocoder
+  groupdate (~> 2.1.1)
   httparty
   jbuilder (~> 2.5)
   jquery-rails

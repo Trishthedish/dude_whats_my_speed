@@ -7,6 +7,10 @@ end
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'chartkick', '~> 1.2.4'
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0'
+
 #Stormpath is currently in beta so it is necessary to include the gem version:
 gem 'stormpath-rails', '~> 2.5.0'
 

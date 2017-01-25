@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119200235) do
+ActiveRecord::Schema.define(version: 20170124202433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20170119200235) do
   end
 
   create_table "rasberry_pis", force: :cascade do |t|
-    t.string   "date"
     t.decimal  "ping"
     t.decimal  "download"
     t.decimal  "upload"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "date_time"
   end
 
   create_table "services", force: :cascade do |t|
@@ -45,7 +46,6 @@ ActiveRecord::Schema.define(version: 20170119200235) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "service_provider"
     t.decimal  "monthly_cost"
     t.decimal  "paid_download"
     t.decimal  "paid_upload"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170119200235) do
     t.integer  "api_key"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "service_provider"
   end
 
 end

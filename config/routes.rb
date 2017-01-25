@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   # get 'broadband/show/' => "#"
   get 'rasberry_pis/index' => 'rasberry_pi#index'
   post 'rasberry_pis/index' => 'rasberry_pi#create'
+  get 'rasberry_pis/show' => 'rasberry_pis#show'
 
 # https://robots.thoughtbot.com/back-to-basics-http-requests
   # match '/curl_example' => 'request_example#curl_post_example', via: :post
 
   get 'users/index' => 'users#index'
+
+# should I instead use this to reference it?
+  resources :users
 
   get 'welcome/about' => 'welcome#about'
 
@@ -20,6 +24,8 @@ Rails.application.routes.draw do
   # get "service#index"
 
   # locations search?
+
+  get 'services/show' => 'services#show'
   resources :locations
 
   stormpath_rails_routes
