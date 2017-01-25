@@ -1,9 +1,25 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
     @pi_data = RasberryPi.all
     # @ordered_data = @pi_data.order(:date)
-    @users = User.all
+
+    @ping_data = []
+    @download_data = []
+    @upload_data = []
+
+    @pi_data.each do |pi_entry|
+      @ping_data.push ([ pi_entry.date_time, pi_entry.ping  ])
+    end
+
+    @pi_data.each do |pi_entry|
+      @download_data.push ([pi_entry.date_time, pi_entry.download])
+    end
+
+    @pi_data.each do |pi_entry|
+      @upload_data.push([pi_entry.date_time, pi_entry.upload])
+    end
 
   end
 

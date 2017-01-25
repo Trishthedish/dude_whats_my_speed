@@ -4,7 +4,7 @@
     <title>DudeWhatsMySpeed</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -27,7 +27,7 @@
 
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">RasberryPi</a></li>
+          <!-- <li><a href="#">RasberryPi</a></li> -->
           <li><a href="/welcome/about">About</a></li>
           <li><a href="/welcome/contact">Contact</a></li>
           <% if signed_in? %>

@@ -1,23 +1,68 @@
-<h1>HELLO USER</h1>
+<div class="container user_info">
+  <div class="row">  <% @users.each do |user| %>
 
+<div class="col-md-6">
+   <h4><strong>Name:</strong> <%= user.name %></h4>
+    <h4>Service Provider in Question: <%= user.service_provider %></h4>
+</div>
 
-<% @users.each do |user| %>
-  <h1>Name: <%= user.name %></h1>
-  <h3>Service Provider in Question: <%= user.service_provider %></h3>
+<div class="col-md-6">
   <ul>
     <li>Monthly Cost: <%= user.monthly_cost %></li>
     <li> Paid Download Speed: <%= user.paid_download %></li>
     <li> Paid Upload Speed: <%= user.paid_upload %></li>
     <li> Area Code: <%= user.area_code %></li>
     <li> Created at: <%=user.created_at %></li>
-  </ul>
-<% end %>
+  </ul></div>
 
-
-
-  <h1> COUNT: <%=@pi_data.count %></h1>
-  <%=@pi_data.to_a %>
-
-
+  <% end %>
+  </div>
 </div>
-  <%= area_chart @pi_data.group_by_day(:created_at).count %>
+
+
+
+  <!-- <h1> COUNT: <%=@pi_data.count %></h1>
+  <%=@pi_data.to_a %> -->
+
+
+<section class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <h1 class="chart_title">Ping Data</h1>
+      <%= line_chart @ping_data %>
+    </div>
+
+    <div class="col-md-6">
+      <h1 class="chart_title">Download Data</h1>
+      <%=line_chart @download_data  %>
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="chart_title">Upload Speed</h1>
+      <%= line_chart @upload_data %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <%#line_chart @pi_data.group(:ping)(:date_time, format: "%b %y, %Y %I" ).count %> -->
+<%#line_chart @pi_data.group(:ping).group_by_minute(:date_time, format: "%b %y, %Y %I" ) %>
+
+<!-- undefined method `scatter_chart' -->
+<%# scatter_chart @pi_data.pluck(:date_time, :upload), xtitle: "Size", ytitle: "Population"%>
+<!-- <%# line_chart @RasberryPi.map {|data|
+  {name: "Ping", data: data.feats.group(:date_time)}
+
+  } %> -->
+  <%# column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
