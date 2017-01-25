@@ -27,7 +27,7 @@ class RasberryPiController < ApplicationController
     @pi_data.date_time = DateTime.now
     # @pi_data.datetime = DateTime.now
     p "THE TIME IS: #{DateTime.now}"
-    p "params.pi_data.date_time AFTER: #{[:pi_data]['date_time']}"
+    p "pi_data.date_time AFTER: #{@pi_data.date_time}"
     # p "params.pi_data.date_time w/o param AFTER: #{[:pi_data]['date_time']}"
     if @pi_data.save
       logger.debug "pi_data created bitch!"
