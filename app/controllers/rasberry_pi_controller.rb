@@ -18,7 +18,7 @@ class RasberryPiController < ApplicationController
     p "params: #{params[0]}"
     p "params.pi_data: #{params[:pi_data]}"
     p "params.pi_data.ping: #{params[:pi_data]['ping']}"
-    p "params.pi_data.date_time: #{params[:pi_data]['date_time']}"
+
     p "----------------------"
     @pi_data = RasberryPi.new
     @pi_data.ping = params[:pi_data]["ping"]
@@ -26,6 +26,7 @@ class RasberryPiController < ApplicationController
     @pi_data.upload = params[:pi_data]["upload"]
     @pi_data.date_time = params[:pi_data]["created_at"]
     # @pi_data.datetime = DateTime.now
+    p "params.pi_data.date_time: #{params[:pi_data]['date_time']}"
     if @pi_data.save
       logger.debug "pi_data created bitch!"
       render json: {status: 'SUCCESS', message: 'Loaded all pi_data'}, status: :ok
