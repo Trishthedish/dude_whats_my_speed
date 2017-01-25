@@ -5,7 +5,7 @@ stormpath:
 
   web:
     login:
-      enabled: true 
+      enabled: true
       nextUri: "/users/index"
     basePath: null
 
@@ -28,6 +28,7 @@ stormpath:
     oauth2:
       enabled: true
       uri: "/oauth/token"
+      nextUri: "/users/index"
       client_credentials:
         enabled: true
         accessToken:
@@ -147,7 +148,7 @@ stormpath:
     login:
       enabled: true
       uri: "/login"
-      nextUri: "/"
+      nextUri: "/users/index"
       view: "stormpath/rails/login/new"
       form:
         fields:
