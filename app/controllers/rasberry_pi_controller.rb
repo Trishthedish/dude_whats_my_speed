@@ -24,7 +24,7 @@ class RasberryPiController < ApplicationController
     @pi_data.ping = params[:pi_data]["ping"]
     @pi_data.download = params[:pi_data]["download"]
     @pi_data.upload = params[:pi_data]["upload"]
-    @pi_data.date_time = params[:pi_data]["created_at"]
+    @pi_data.date_time = DateTime.now
     # @pi_data.datetime = DateTime.now
     p "THE TIME IS: #{DateTime.now}"
     p "params.pi_data.date_time: #{params[:pi_data]['date_time']}"
