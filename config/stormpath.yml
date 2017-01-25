@@ -4,6 +4,8 @@ stormpath:
     name: Stormpath
 
   web:
+    login:
+      enabled: true, nextUri: "/users/index"
     basePath: null
 
     domainName: null  # Required if using subdomain-based multi-tenancy
