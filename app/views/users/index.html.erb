@@ -50,19 +50,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<!-- <%#line_chart @pi_data.group(:ping)(:date_time, format: "%b %y, %Y %I" ).count %> -->
-<%#line_chart @pi_data.group(:ping).group_by_minute(:date_time, format: "%b %y, %Y %I" ) %>
-
-<!-- undefined method `scatter_chart' -->
-<%# scatter_chart @pi_data.pluck(:date_time, :upload), xtitle: "Size", ytitle: "Population"%>
-<!-- <%# line_chart @RasberryPi.map {|data|
-  {name: "Ping", data: data.feats.group(:date_time)}
-
-  } %> -->
-  <%# column_chart Order.group_by_day_of_week(:created_at, format: "%a").count %>
