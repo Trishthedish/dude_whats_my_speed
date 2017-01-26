@@ -33,7 +33,7 @@
           <li><a href="/welcome/about">About</a></li>
           <!-- <li><a href="/welcome/contact">Contact</a></li> -->
           <% if signed_in? %>
-           <li class="login">WELCOME:  <%= current_account.given_name %></li>
+           <li><span class="glyphicon glyphicon-user"></span>  <%= current_account.given_name %></li>
           <li> <%= link_to "Log out", logout_path, method: :post %></li>
 
         <% else %>
