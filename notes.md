@@ -76,9 +76,7 @@ class Broadband_Wrapper
     url = BASE_URL + "broadband/" + "#{DATA_VERSION}" + "/wireless?" + "latitude=#{LAT_SEARCH}" + "&longitude=#{LONG_SEARCH}" + "&format=#{FORMAT}"
 
 
-    <%=image_tag("Twitter_Logo_Blue.png", class: "logos") %>
-    <%=image_tag("Octocat.png", class:"logos") %>
-    <%=image_tag("Gmail-icon.png", class:"logos")  %>
+
 
     data = HTTParty.get(url)
     search_results = []

@@ -1,72 +1,92 @@
-    <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
+<body>
 
-              <h1>Track &amp; Monintor</h1>
-                <h2>your internet speeds over time</h2>
-            </div>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        MENU
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Analytics</a>
+                </li>
+                <li>
+                    <a href="#">Permissions</a>
+                </li>
+                <li>
+                    <a href="#">Build More Charts</a>
+                </li>
+                <li>
+                    <a href="#">Add User</a>
+                </li>
+            </ul>
         </div>
-    </header>
+        <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
-    <div class="container">
+        <!-- Page Content -->
+        <div id="page-content-wrapper side-obj">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Welcome!</h1>
+                    
 
-        <hr class="featurette-divider">
-
-        <!-- First Featurette -->
-        <div class="featurette" id="about">
-            <%= image_tag("trish_laptop.jpg", class: "featurette-image img-circle img-responsive pull-right") %>
-
-            <h2 class="featurette-heading">This First Heading
-                <span class="text-muted">Will Catch Your Eye</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Second Featurette -->
-        <div class="featurette" id="services">
-
-
-          <%=image_tag("data_pic", class: "featurette-image img-circle img-responsive pull-left") %>
-
-            <h2 class="featurette-heading">The Second Heading
-                <span class="text-muted">Is Pretty Cool Too.</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Third Featurette -->
-        <div class="featurette" id="contact">
-
-          <%=image_tag("tinkering", class: "featurette-image img-circle img-responsive pull-right") %>
-            <!-- <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500"> -->
-            <h2 class="featurette-heading">The Third Heading
-                <span class="text-muted">Will Seal the Deal.</span>
-            </h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Trish Griego 2014</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
                 </div>
             </div>
-        </footer>
+          <p class="divider"></p>
 
-    </div>
-    <!-- /.container -->
+        </div>
+        <!-- /#page-content-wrapper -->
+        <section class="container">
+
+          <div class="row">
+
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Ping Data</h1>
+              <%= line_chart @ping_data %>
+            </div>
+
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Download Data</h1>
+              <%=line_chart @download_data  %>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Upload Speed</h1>
+              <%= line_chart @upload_data %>
+            </div>
+          </div>
+        </div>
+
+
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
