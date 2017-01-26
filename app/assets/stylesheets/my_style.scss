@@ -112,14 +112,14 @@ body {
 
 .headline h1 {
     font-size: 130px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: transparent;
+    text-shadow: 0px 0px 100px #fff;
 }
 
 .headline h2 {
     font-size: 77px;
-    background: #fff;
-    background: rgba(255,255,255,0.9);
+    background: transparent;
+    text-shadow: 0px 0px 100px #fff;
 }
 
 .featurette-divider {
@@ -270,14 +270,11 @@ footer {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+
+.tweet {
+  width: 100px;
 }
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+
+.octo {
+  width: 100px;
 }

@@ -4,9 +4,10 @@
 <header class="header-image">
     <div class="headline">
         <div class="container">
+          <!-- <h1>Track &amp; Monintor</h1> -->
+          <h1 class="title">Monitor &amp Track</h1>
+          <h2>Broadband Speeds</h2>
 
-          <h1>Track &amp; Monintor</h1>
-            <h2>your internet speeds over time</h2>
         </div>
     </div>
 </header>
@@ -14,52 +15,56 @@
 <!-- Page Content -->
 <div class="container">
 
-    <hr class="featurette-divider">
+    <p class="featurette-divider"></p>
 
     <!-- First Featurette -->
     <div class="featurette" id="about">
         <%= image_tag("raspberry_pi_2.jpg", class: "featurette-image img-circle img-responsive pull-right") %>
 
-        <h2 class="featurette-heading">This First Heading
-            <span class="text-muted">Will Catch Your Eye</span>
+<!-- Raspberry Pi Raspberry Pi is a low-cost, basic computer that was originally intended to help spur interest in computing among school-aged children. The Raspberry Pi is contained on a single circuit board and features ports for: HDMI. USB 2.0. Composite video. -->
+        <h2 class="featurette-heading">Who has time to run
+            <span class="text-muted"> speed tests by hand?</span>
         </h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <p class="lead">
+          The answer my friend is a little gadget known as a <a href="https://www.raspberrypi.org/blog/what-can-you-do-with-a-raspberry-pi/">Raspberry Pi</a>. The pi is a low cost, credit-card sized computer that plugs into a computer monitor or TV, and uses a standard keyboard and mouse. It's a small but mighty device that enables users of all ages to explore emebedded solutions to problems.
+        </p>
     </div>
 
     <hr class="featurette-divider">
+  <!-- Second Featurette -->
 
-    <!-- Second Featurette -->
-    <div class="featurette" id="services">
+<div class="featurette" id="contact">
 
-
-      <%=image_tag("data_pic.jpg", class: "featurette-image img-circle img-responsive pull-left") %>
-
-        <h2 class="featurette-heading">The Second Heading
-            <span class="text-muted">Is Pretty Cool Too.</span>
-        </h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
+  <%=image_tag("tinkering.jpg", class: "featurette-image img-circle img-responsive pull-left") %>
+    <!-- <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500"> -->
+    <h2 class="featurette-heading"> Customize &amp configure
+        <span class="text-muted"> your new machine </span>
+    </h2>
+    <p class="lead"> Your Pi will do all the work so you don't have to. It can gather lots of useful information so you can hold your Internet Services Provider accountable.</p>
+</div>
 
     <hr class="featurette-divider">
 
     <!-- Third Featurette -->
-    <div class="featurette" id="contact">
+    <div class="featurette" id="services">
 
-      <%=image_tag("tinkering.jpg", class: "featurette-image img-circle img-responsive pull-right") %>
-        <!-- <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500"> -->
-        <h2 class="featurette-heading">The Third Heading
-            <span class="text-muted">Will Seal the Deal.</span>
+
+      <%=image_tag("data_pic.jpg", class: "featurette-image img-circle img-responsive pull-right") %>
+
+        <h2 class="featurette-heading">Once you have a Raspberry Pi
+            <span class="text-muted">monitoring system in place</span>
         </h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <p class="lead"> It should measure your broadband speed once an hour and automatically log it to the cloud. Once this automation starts you will have ample evidence to contact your broadband provider when speeds are, let's say less than optimal.</p>
     </div>
 
     <hr class="featurette-divider">
+
 
     <!-- Footer -->
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Trish Griego 2014</p>
+                <p>Copyright &copy; Trish Griego 2017</p>
             </div>
         </div>
     </footer>
