@@ -1,12 +1,12 @@
-<div class="container user_info">
+<!-- <div class="container user_info">
   <div class="row">  <% @users.each do |user| %>
 
 <div class="col-md-6">
    <h4><strong>Name:</strong> <%= user.name %></h4>
     <h4>Service Provider in Question: <%= user.service_provider %></h4>
-</div>
+</div> -->
 
-<div class="col-md-6">
+<!-- <div class="col-md-6">
   <ul>
     <li>Monthly Cost: <%= user.monthly_cost %></li>
     <li> Paid Download Speed: <%= user.paid_download %></li>
@@ -17,31 +17,102 @@
 
   <% end %>
   </div>
-</div>
+</div> -->
 
 
-<section class="container">
+<body>
 
-  <div class="row">
+    <div id="wrapper">
 
-    <div class="col-md-6">
-      <h1 class="chart_title">Ping Data</h1>
-      <%= line_chart @ping_data %>
-    </div>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        MENU
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Analytics</a>
+                </li>
+                <li>
+                    <a href="#">Permissions</a>
+                </li>
+                <li>
+                    <a href="#">Build More Charts</a>
+                </li>
+                <li>
+                    <a href="#">Add User</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
-    <div class="col-md-6">
-      <h1 class="chart_title">Download Data</h1>
-      <%=line_chart @download_data  %>
-    </div>
+        <!-- Page Content -->
+        <div id="page-content-wrapper side-obj">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Welcome!</h1>
 
-  </div>
-</section>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Options</a>
+                    </div>
+                </div>
+            </div>
+          <p class="divider"></p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h1 class="chart_title">Upload Speed</h1>
-      <%= line_chart @upload_data %>
-    </div>
-  </div>
-</div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        <section class="container">
+
+          <div class="row">
+
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Ping Data</h1>
+              <%= line_chart @ping_data %>
+            </div>
+
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Download Data</h1>
+              <%=line_chart @download_data  %>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 chart_wrap">
+              <h1 class="chart_title">Upload Speed</h1>
+              <%= line_chart @upload_data %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Trish Griego 2017</p>
+                </div>
+            </div>
+        </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
