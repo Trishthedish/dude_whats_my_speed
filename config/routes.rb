@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get 'services/show' => 'services#show'
   resources :locations
 
+  get 'welcome/test' => 'welcome#test'
   stormpath_rails_routes
 
 end
