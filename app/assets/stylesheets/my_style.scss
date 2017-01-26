@@ -8,11 +8,11 @@
 // }
 //
 // this config allowed picture to be stretched over page.
-body {
-  background-color: #fff;
-  color:white;
-  // background: image-url('openroad.jpg');
-}
+// body {
+//   background-color: #fff;
+//   color:white;
+//   // background: image-url('openroad.jpg');
+// }
 
 
 .login {
@@ -29,49 +29,45 @@ body {
   border-color: black;
 }
 
-.left_side_img {
-  // padding-left: 0px;
-
-}
 
 .right_side_word {
   padding-right: 30px
 }
 
 
+//
+// .glyphicon {
+//   font-size: 5em;
+//   display: block;
+//   text-align: center;
+//   color: #3a878D;
+// }
+//
+// .holder {
+//   background-color: white;
+//   border-radius: 10%;
+// }
 
-.glyphicon {
-  font-size: 5em;
-  display: block;
-  text-align: center;
-  color: #3a878D;
-}
-
-.holder {
-  background-color: white;
-  border-radius: 10%;
-}
-
-.search_box {
-  width: 70px;
-  line-height: 30px;
-}
+// .search_box {
+//   width: 70px;
+//   line-height: 30px;
+// }
 
 
-.user_form {
-  // position: relative;
-  width: 740px;
-  height: 400px;
-  margin: 0 auto;
-  border-style: solid;
-  opacity: 1;
-  border-radius: 20px;
-  font-size: 18px;
-  padding: 20px;
-  padding-left: 20px;
-  background-color: white;
-  font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
-}
+// .user_form {
+//   // position: relative;
+//   width: 740px;
+//   height: 400px;
+//   margin: 0 auto;
+//   border-style: solid;
+//   opacity: 1;
+//   border-radius: 20px;
+//   font-size: 18px;
+//   padding: 20px;
+//   padding-left: 20px;
+//   background-color: white;
+//   font-family: "Helvetica Neue", Helvetica,Arial,sans-serif;
+// }
 
 // user_form {
 //   border: 2em;
@@ -89,21 +85,21 @@ body {
   text-align: center;
   border-radius: 8px;
 }
-
-.user_info {
-  padding-top: 30px;
-}
+//
+// .user_info {
+//   padding-top: 30px;
+// }
 
 
 body {
-    margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    // margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 .header-image {
     display: block;
     width: 100%;
     text-align: center;
-    background: url('http://placehold.it/1900x500') no-repeat center center scroll;
+    background: url('http://i.imgur.com/CrGsqzP.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
